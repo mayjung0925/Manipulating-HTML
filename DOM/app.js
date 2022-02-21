@@ -1,3 +1,4 @@
+//1.
 const div1 = document.createElement('div');
 div1.id = "div1";
 div1.textContent = "1."
@@ -12,17 +13,6 @@ div1.appendChild(firstBtn)
 firstBtn.addEventListener('click', function () {
     alert('Happiness is not by chance, but by choice!');
 })
-
-
-// const div1 = document.getElementById('div1')
-// const firstBtn = document.createElement('button')
-// const btnText = document.createTextNode('Button 1')
-
-
-// firstBtn.appendChild(btnText);
-// document.body.appendChild(firstBtn);
-//Q1: cannot append firstBtn to <div id="div1">
-// div1.appendChild(firstBtn);
 
 
 //2.
