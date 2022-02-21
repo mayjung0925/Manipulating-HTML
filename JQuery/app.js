@@ -1,30 +1,29 @@
 $(document).ready(function () {
   //1.
-  $('body').append('<div id="div1"></div>');
-  $('#div1').text('1.')
+  $('body').append('<div id="div1">1. </div>');
+  $('#div1').append('<button id="firstBtn">Button 1</button>');
 
-  $('#div1').append('<button id="firstBtn"></button>');
-  $('#firstBtn').text('Button 1')
 
   $('#firstBtn').on('click', function () {
     alert('Happiness is not by chance, but by choice!');
   })
 
   //2.
-  $('body').append('<div id="div2"></div>');
-  $('#div2').text('2.')
+  $('body').append('<div id="div2">2. </div>');
+  let textBox =  $('input[type="text"]')
+  let button = $('input[type="button"]')
 
-  $('input[type="text"]').appendTo('#div2');
-  $('input[type="button"]').appendTo('#div2');
+  textBox.appendTo('#div2');
+  button.appendTo('#div2');
 
-  $('input[type="button"]').click(function () {
-    alert($('input[type="text"]').val())
+  button.click(function () {
+    alert(textBox.val())
   })
 
   //3.
 
-  $('body').append('<div id="div3"></div>');
-  $('#div3').text('3.')
+  $('body').append('<div id="div3">3. </div>');
+
 
   $('#div3').mouseover(function () {
 
@@ -38,40 +37,37 @@ $(document).ready(function () {
   })
 
   //4.
-  $('body').append('<div id="div4"></div>');
-  $('#div4').text('4.')
-  $('#para1').appendTo('#div4')
+  $('body').append('<div id="div4">4. </div>');
+  let para1 = $('#para1')
+ 
+  para1.appendTo('#div4')
 
-  $('#para1').click(function () {
+  para1.click(function () {
 
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     let rgbCol = `rgb(${r},${g},${b})`
-    $('#para1').css('color', rgbCol);
+    para1.css('color', rgbCol);
   })
 
   //5.
-  $('body').append('<div id="div5"></div>');
-  $('#div5').text('5.')
-  $('#div5').append('<button id="secondBtn"></button>');
-  $('#secondBtn').text('Button 2');
+  $('body').append('<div id="div5">5. </div>');
+  let secondBtn = $('<button id="secondBtn">Button 2</button>')
 
-
-  $('#secondBtn').click(function () {
-    $('#div5').append('<span></span>');
-    $('span').text(' Eunjin Jeong ');
+  $('#div5').append(secondBtn);
+  
+  secondBtn.click(function () {
+    $('#div5').append('<span> Eunjin Jeong </span>');
+    
   })
 
   //6.
-  $('body').append('<div id="div6"></div>');
-  $('#div6').text('6.')
-  $('#div6').append('<button id="thirdBtn"></button>');
+  $('body').append('<div id="div6">6. </div>');
+  let thirdBtn = $('<button id="thirdBtn">Button 3</button>')
+ 
+  $('#div6').append(thirdBtn);
   $('#div6').append('<ul></ul>');
-
-  $('#thirdBtn').text('Button 3');
-
-
 
 const nameArr = [
   "Carol",
@@ -88,11 +84,10 @@ const nameArr = [
 
 let count = 0
 
-$('#thirdBtn').click(function(){
+thirdBtn.click(function(){
 
   if( count < 10){
-    let $newLi =$('<li></li>');
-    $newLi.text(nameArr[count]);
+    let $newLi =$('<li>'+nameArr[count]+'</li>');
     $('ul').append($newLi);
     
   }
